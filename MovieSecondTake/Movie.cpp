@@ -8,6 +8,7 @@ Movie::Movie()
 	runningTime = new int;
 	productionCost = new double;
 	firstYearRevenue = new double;
+	profit = new double;
 
 	*title = "No Title";
 	*director = "No Director";
@@ -15,6 +16,7 @@ Movie::Movie()
 	*runningTime = 0.0;
 	*productionCost = 0.0;
 	*firstYearRevenue = 0.0;
+	*profit = 0.0;
 }
 
 Movie::Movie(Movie* copy)
@@ -90,6 +92,11 @@ void Movie::setRevenue(double* aRevenue)
 	}
 }
 
+void Movie::setProfit()
+{
+	*profit = *getRevenue() - *getCost();
+}
+
 void Movie::setAll(string* aTitle, string* aDirector, int* aYear, int* aTime, double* aCost, double* aRevenue)
 {
 	setTitle(aTitle);
@@ -98,6 +105,7 @@ void Movie::setAll(string* aTitle, string* aDirector, int* aYear, int* aTime, do
 	setTime(aTime);
 	setCost(aCost);
 	setRevenue(aRevenue);
+	setProfit();
 }
 
 string* Movie::getTitle()
@@ -130,8 +138,13 @@ double* Movie::getRevenue()
 	return firstYearRevenue;
 }
 
+double* Movie::getProfit()
+{
+	return profit;
+}
+
 void Movie::display()
 {
 	cout << setw(30) << *getTitle() << setw(30) << *getDirector() << setw(30) << *getYear() << setw(30)
-		<< *getTime() << fixed << setprecision(2) << setw(30) << *getCost() << setw(30) << *getRevenue() << setw(30);
+		<< *getTime() << fixed << setprecision(2) << setw(30) << *getCost() << setw(30) << *getRevenue() << setw(30) << *getProfit();
 }

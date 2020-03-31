@@ -44,7 +44,7 @@ void printMenu()
 {
 	cout << "Movie Menu:\n"
 		<< "1- Add movie\n"
-		<< "2- Remove Movie\n"
+		<< "2- Remove Last Movie\n"
 		<< "3- Modify movie\n"
 		<< "4- Display list\n"
 		<< "5- Exit\n";
@@ -133,7 +133,7 @@ void addMovie(Movie* aList, int* n)
 
 void removeMovie(Movie* aList, int* n)
 {
-	n--;
+	--* n;
 	cout << "\n\n\n";
 }
 
