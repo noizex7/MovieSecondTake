@@ -14,6 +14,7 @@ private:
 	int* runningTime = nullptr;
 	double* productionCost = nullptr;
 	double* firstYearRevenue = nullptr;
+	double* profit;
 public:
 	Movie();
 	Movie(Movie*);
@@ -24,6 +25,7 @@ public:
 	void setTime(int*);
 	void setCost(double*);
 	void setRevenue(double*);
+	void setProfit();
 	void setAll(string*, string*, int*, int*, double*, double*);
 	string* getTitle();
 	string* getDirector();
@@ -31,6 +33,7 @@ public:
 	int* getTime();
 	double* getCost();
 	double* getRevenue();
+	double* getProfit();
 	void display();
 
 };
